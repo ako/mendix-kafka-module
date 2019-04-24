@@ -1,0 +1,74 @@
+/* use:
+ * Download all dependencies - \programs\gradle-3.5\bin\gradle getTestRuntimeLibs
+ * Download just the export dependencies -  \programs\gradle-3.5\bin\gradle getExportLibs
+ */
+
+apply plugin: 'java'
+
+configurations {
+    export {}
+    compile { extendsFrom export }
+}
+compileJava.destinationDir = file("$rootDir/src/deployment/run/bin")
+
+dependencies {
+    // public mendix runtime jars
+    compile name: 'com.mendix.public-api'
+    compile name: 'com.mendix.json'
+    compile name: 'com.mendix.logging-api'
+    compile name: 'com.mendix.m2ee-api'
+    compile name: 'javax.servlet-api.servlet'
+    // unit test module
+//    testRuntime 'junit:junit:4.11'
+//    testRuntime 'commons-io:commons-io:2.3'
+//    testRuntime 'org.apache.commons:commons-lang3:3.6'
+//    testRuntime 'org.apache.httpcomponents:httpclient:4.4.1'
+//    testRuntime 'org.apache.httpcomponents:httpcore:4.4.1'
+//    // for appcloudservices
+//    testRuntime 'org.openid4java:openid4java:1.0.0'
+//    testRuntime 'commons-lang:commons-lang:2.5'
+//    testRuntime 'org.apache.ws.commons.axiom:axiom-api:1.2.19'
+    // export slack client sdk jars for upload to AppStore
+    export group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.0'
+    export group: 'org.apache.kafka', name: 'kafka-streams', version: '2.2.0'
+    export group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.2.1'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'http://packages.confluent.io/maven/' }
+    flatDir {
+        dirs '/c://Program Files/Mendix/7.23.3.48173/runtime/bundles'
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/javasource']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
+}
+
+task getExportlibs(type: Copy) {
+    doFirst {
+        delete fileTree(dir: "src/userlib")
+    }
+    from configurations.export
+    into 'src/userlib/'
+    doLast {
+        files { file('src/userlib').listFiles() }.each { File file ->
+            println "file found: $file.name"
+            def keepFilename = 'src/userlib/' + file.name + '.KafkaModule.RequiredLib'
+            ant.touch(file: keepFilename)
+        }
+    }
+}
+
+task getTestRuntimelibs(type: Copy) {
+    from configurations.testRuntime
+    into 'src/userlib/'
+}

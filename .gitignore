@@ -2,3 +2,7 @@
 *.project
 *.launch
 src/deployment
+.gradle
+.idea
+*.bak
+src/userlib

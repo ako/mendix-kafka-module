@@ -33,7 +33,7 @@ public class StartConsumer extends CustomJavaAction<java.lang.Boolean>
 		this.OnReceive = OnReceive;
 	}
 
-	@Override
+	@java.lang.Override
 	public java.lang.Boolean executeAction() throws Exception
 	{
 		this.Config = __Config == null ? null : kafkamodule.proxies.ConsumerConfig.initialize(getContext(), __Config);
@@ -50,7 +50,7 @@ public class StartConsumer extends CustomJavaAction<java.lang.Boolean>
 	/**
 	 * Returns a string representation of this action
 	 */
-	@Override
+	@java.lang.Override
 	public java.lang.String toString()
 	{
 		return "StartConsumer";

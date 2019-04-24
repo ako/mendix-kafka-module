@@ -80,7 +80,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 			metaName = s;
 		}
 
-		@Override
+		@java.lang.Override
 		public java.lang.String toString()
 		{
 			return metaName;
@@ -102,7 +102,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 	/**
 	 * @deprecated Use 'ProducerConfig.load(IContext, IMendixIdentifier)' instead.
 	 */
-	@Deprecated
+	@java.lang.Deprecated
 	public static kafkamodule.proxies.ProducerConfig initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixIdentifier mendixIdentifier) throws com.mendix.core.CoreException
 	{
 		return kafkamodule.proxies.ProducerConfig.load(context, mendixIdentifier);
@@ -110,7 +110,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 
 	/**
 	 * Initialize a proxy using context (recommended). This context will be used for security checking when the get- and set-methods without context parameters are called.
-	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.getSudoContext() can be used to obtain sudo access).
+	 * The get- and set-methods with context parameter should be used when for instance sudo access is necessary (IContext.createSudoClone() can be used to obtain sudo access).
 	 */
 	public static kafkamodule.proxies.ProducerConfig initialize(com.mendix.systemwideinterfaces.core.IContext context, com.mendix.systemwideinterfaces.core.IMendixObject mendixObject)
 	{
@@ -386,7 +386,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 	/**
 	 * @return value of linger_ms
 	 */
-	public final java.lang.Long getlinger_ms()
+	public final java.lang.Integer getlinger_ms()
 	{
 		return getlinger_ms(getContext());
 	}
@@ -395,16 +395,16 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 	 * @param context
 	 * @return value of linger_ms
 	 */
-	public final java.lang.Long getlinger_ms(com.mendix.systemwideinterfaces.core.IContext context)
+	public final java.lang.Integer getlinger_ms(com.mendix.systemwideinterfaces.core.IContext context)
 	{
-		return (java.lang.Long) getMendixObject().getValue(context, MemberNames.linger_ms.toString());
+		return (java.lang.Integer) getMendixObject().getValue(context, MemberNames.linger_ms.toString());
 	}
 
 	/**
 	 * Set value of linger_ms
 	 * @param linger_ms
 	 */
-	public final void setlinger_ms(java.lang.Long linger_ms)
+	public final void setlinger_ms(java.lang.Integer linger_ms)
 	{
 		setlinger_ms(getContext(), linger_ms);
 	}
@@ -414,7 +414,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 	 * @param context
 	 * @param linger_ms
 	 */
-	public final void setlinger_ms(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Long linger_ms)
+	public final void setlinger_ms(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Integer linger_ms)
 	{
 		getMendixObject().setValue(context, MemberNames.linger_ms.toString(), linger_ms);
 	}
@@ -671,7 +671,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 		getMendixObject().setValue(context, MemberNames.transactional_id.toString(), transactional_id);
 	}
 
-	@Override
+	@java.lang.Override
 	public boolean equals(Object obj)
 	{
 		if (obj == this)
@@ -685,7 +685,7 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 		return false;
 	}
 
-	@Override
+	@java.lang.Override
 	public int hashCode()
 	{
 		return getMendixObject().hashCode();
@@ -703,8 +703,8 @@ public class ProducerConfig extends kafkamodule.proxies.KafkaConfig
 	 * @return String GUID from this object, format: ID_0000000000
 	 * @deprecated Use getMendixObject().getId().toLong() to get a unique identifier for this object.
 	 */
-	@Override
-	@Deprecated
+	@java.lang.Override
+	@java.lang.Deprecated
 	public java.lang.String getGUID()
 	{
 		return "ID_" + getMendixObject().getId().toLong();
