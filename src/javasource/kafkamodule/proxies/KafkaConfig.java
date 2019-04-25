@@ -60,7 +60,10 @@ public class KafkaConfig
 		ssl_endpoint_identification_algorithm("ssl_endpoint_identification_algorithm"),
 		ssl_keymanager_algorithm("ssl_keymanager_algorithm"),
 		ssl_secure_random_implementation("ssl_secure_random_implementation"),
-		ssl_trustmanager_algorithm("ssl_trustmanager_algorithm");
+		ssl_trustmanager_algorithm("ssl_trustmanager_algorithm"),
+		basic_auth_credentials_source("basic_auth_credentials_source"),
+		schema_registry_basic_auth_user_info("schema_registry_basic_auth_user_info"),
+		schema_registry_url("schema_registry_url");
 
 		private java.lang.String metaName;
 
@@ -1530,6 +1533,114 @@ public class KafkaConfig
 	public final void setssl_trustmanager_algorithm(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String ssl_trustmanager_algorithm)
 	{
 		getMendixObject().setValue(context, MemberNames.ssl_trustmanager_algorithm.toString(), ssl_trustmanager_algorithm);
+	}
+
+	/**
+	 * @return value of basic_auth_credentials_source
+	 */
+	public final java.lang.String getbasic_auth_credentials_source()
+	{
+		return getbasic_auth_credentials_source(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of basic_auth_credentials_source
+	 */
+	public final java.lang.String getbasic_auth_credentials_source(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.basic_auth_credentials_source.toString());
+	}
+
+	/**
+	 * Set value of basic_auth_credentials_source
+	 * @param basic_auth_credentials_source
+	 */
+	public final void setbasic_auth_credentials_source(java.lang.String basic_auth_credentials_source)
+	{
+		setbasic_auth_credentials_source(getContext(), basic_auth_credentials_source);
+	}
+
+	/**
+	 * Set value of basic_auth_credentials_source
+	 * @param context
+	 * @param basic_auth_credentials_source
+	 */
+	public final void setbasic_auth_credentials_source(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String basic_auth_credentials_source)
+	{
+		getMendixObject().setValue(context, MemberNames.basic_auth_credentials_source.toString(), basic_auth_credentials_source);
+	}
+
+	/**
+	 * @return value of schema_registry_basic_auth_user_info
+	 */
+	public final java.lang.String getschema_registry_basic_auth_user_info()
+	{
+		return getschema_registry_basic_auth_user_info(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of schema_registry_basic_auth_user_info
+	 */
+	public final java.lang.String getschema_registry_basic_auth_user_info(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.schema_registry_basic_auth_user_info.toString());
+	}
+
+	/**
+	 * Set value of schema_registry_basic_auth_user_info
+	 * @param schema_registry_basic_auth_user_info
+	 */
+	public final void setschema_registry_basic_auth_user_info(java.lang.String schema_registry_basic_auth_user_info)
+	{
+		setschema_registry_basic_auth_user_info(getContext(), schema_registry_basic_auth_user_info);
+	}
+
+	/**
+	 * Set value of schema_registry_basic_auth_user_info
+	 * @param context
+	 * @param schema_registry_basic_auth_user_info
+	 */
+	public final void setschema_registry_basic_auth_user_info(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String schema_registry_basic_auth_user_info)
+	{
+		getMendixObject().setValue(context, MemberNames.schema_registry_basic_auth_user_info.toString(), schema_registry_basic_auth_user_info);
+	}
+
+	/**
+	 * @return value of schema_registry_url
+	 */
+	public final java.lang.String getschema_registry_url()
+	{
+		return getschema_registry_url(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of schema_registry_url
+	 */
+	public final java.lang.String getschema_registry_url(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.String) getMendixObject().getValue(context, MemberNames.schema_registry_url.toString());
+	}
+
+	/**
+	 * Set value of schema_registry_url
+	 * @param schema_registry_url
+	 */
+	public final void setschema_registry_url(java.lang.String schema_registry_url)
+	{
+		setschema_registry_url(getContext(), schema_registry_url);
+	}
+
+	/**
+	 * Set value of schema_registry_url
+	 * @param context
+	 * @param schema_registry_url
+	 */
+	public final void setschema_registry_url(com.mendix.systemwideinterfaces.core.IContext context, java.lang.String schema_registry_url)
+	{
+		getMendixObject().setValue(context, MemberNames.schema_registry_url.toString(), schema_registry_url);
 	}
 
 	/**

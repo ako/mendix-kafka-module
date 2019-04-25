@@ -74,7 +74,10 @@ public class ConsumerConfig extends kafkamodule.proxies.KafkaConfig
 		ssl_endpoint_identification_algorithm("ssl_endpoint_identification_algorithm"),
 		ssl_keymanager_algorithm("ssl_keymanager_algorithm"),
 		ssl_secure_random_implementation("ssl_secure_random_implementation"),
-		ssl_trustmanager_algorithm("ssl_trustmanager_algorithm");
+		ssl_trustmanager_algorithm("ssl_trustmanager_algorithm"),
+		basic_auth_credentials_source("basic_auth_credentials_source"),
+		schema_registry_basic_auth_user_info("schema_registry_basic_auth_user_info"),
+		schema_registry_url("schema_registry_url");
 
 		private java.lang.String metaName;
 

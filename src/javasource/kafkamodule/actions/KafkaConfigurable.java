@@ -9,7 +9,7 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.systemwideinterfaces.core.IMendixObjectMember;
 
 public class KafkaConfigurable {
-	protected final static ILogNode logger = Core.getLogger("Kafka Module");	
+	protected final static ILogNode logger = Core.getLogger("KafkaModule");
 	protected Properties props;
 	protected IContext context;
 	

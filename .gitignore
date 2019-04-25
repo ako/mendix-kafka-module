@@ -6,3 +6,4 @@ src/deployment
 .idea
 *.bak
 src/userlib
+*.swp
